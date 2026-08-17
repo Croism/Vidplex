@@ -42,10 +42,6 @@ The app will open at `http://localhost:3000`
 npm run build
 ```
 
-## API Configuration
-
-The app uses The Movie Database (TMDB) API. The Bearer token is currently hardcoded in `src/services/tmdb.js`. For production, you should move this to an environment variable.
-
 ## Project Structure
 
 ```
