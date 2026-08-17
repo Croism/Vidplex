@@ -1,0 +1,153 @@
+.search-results {
+  padding: 100px 50px 50px;
+  min-height: 100vh;
+}
+
+.search-title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 30px;
+  color: #ffffff;
+}
+
+.search-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 20px;
+}
+
+.search-card {
+  position: relative;
+  cursor: pointer;
+  border-radius: 4px;
+  overflow: hidden;
+  transform: translateZ(0);
+  backface-visibility: hidden;
+  contain: layout style paint;
+  content-visibility: auto;
+  contain-intrinsic-size: 200px 300px;
+  transition: transform var(--motion-duration, 220ms) var(--motion-ease, ease);
+}
+
+/* Reuse the continue-watching badge styles */
+.continue-badge {
+  position: absolute;
+  top: 8px;
+  left: 8px;
+  background-color: var(--accent-color, #228C22);
+  color: #ffffff;
+  border-radius: 4px;
+  padding: 4px 6px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2;
+}
+
+.continue-badge-icon {
+  width: 16px;
+  height: 16px;
+}
+
+.search-card:hover {
+  transform: translateZ(0) scale(1.05);
+  z-index: 10;
+}
+
+.search-poster {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  display: block;
+  transform: translateZ(0);
+}
+
+.search-placeholder {
+  width: 100%;
+  height: 300px;
+  background-color: #333;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  text-align: center;
+  font-size: 0.875rem;
+  color: #ffffff;
+}
+
+.no-results {
+  text-align: center;
+  padding: 100px 20px;
+  font-size: 1.125rem;
+  color: #999;
+}
+
+@media (max-width: 768px) {
+  .search-results {
+    padding: 80px 15px 40px;
+  }
+  
+  .search-title {
+    font-size: 1.25rem;
+    margin-bottom: 20px;
+  }
+  
+  .search-grid {
+    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+    gap: 12px;
+  }
+  
+  .search-poster,
+  .search-placeholder {
+    height: 210px;
+  }
+  
+  .search-card:active {
+    transform: translateZ(0) scale(1.02);
+  }
+
+  .search-card {
+    contain-intrinsic-size: 140px 210px;
+  }
+  
+  .search-play-btn {
+    width: 50px;
+    height: 50px;
+  }
+}
+
+@media (max-width: 480px) {
+  .search-results {
+    padding: 70px 12px 30px;
+  }
+  
+  .search-title {
+    font-size: 1.125rem;
+  }
+  
+  .search-grid {
+    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+    gap: 10px;
+  }
+  
+  .search-poster,
+  .search-placeholder {
+    height: 180px;
+  }
+  
+  .search-placeholder {
+    font-size: 0.75rem;
+  }
+
+  .search-card {
+    contain-intrinsic-size: 120px 180px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .search-card:hover,
+  .search-card:active {
+    transform: none;
+  }
+}
+

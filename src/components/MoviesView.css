@@ -1,0 +1,34 @@
+.movies-view {
+  min-height: 100vh;
+  background: #141414;
+}
+
+.loading-container {
+  padding: 100px 50px;
+  text-align: center;
+  color: #ffffff;
+  font-size: 1.125rem;
+}
+
+.movies-content {
+  padding-bottom: 50px;
+}
+
+@media (max-width: 768px) {
+  .loading-container {
+    padding: 80px 20px;
+    font-size: 1rem;
+  }
+  
+  .movies-content {
+    padding-bottom: 40px;
+  }
+}
+
+@media (max-width: 480px) {
+  .loading-container {
+    padding: 70px 15px;
+    font-size: 0.875rem;
+  }
+}
+
